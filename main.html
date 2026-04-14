@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Health Buster // Healthy and Responsible Relationships</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <div id="screen-start" class="screen active">
+    <div class="start-bg"></div>
+    <div class="start-content">
+      <div class="logo-badge">Healthy and Responsible Relationships</div>
+      <h1>Health<br><span class="accent">Busters</span></h1>
+      <p class="subtitle">Apply your knowledge about healthy relationships,<br>consent, and sexual health, in a fun little game</p>
+      <div class="stats-row">
+        <div class="stat-pill">20 Questions</div>
+        <div class="stat-pill">True or False</div>
+      </div>
+      <button class="btn-primary" onclick="startGame()">Start Playing</button>
+      <p class="disclaimer">Moving the Needle Project - by: Andy Mikhael</p>
+    </div>
+  </div>
+  <div id="screen-game" class="screen">
+    <div class="game-header">
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <div class="game-meta">
+        <span id="card-counter">Card 1 of 20</span>
+        <span id="score-display">Score: 0</span>
+      </div>
+    </div>
+    <div class="card-stage" id="card-stage">
+      <div class="card" id="game-card">
+        <div class="card-tag" id="card-tag">Consent</div>
+        <div class="card-number" id="card-number">01</div>
+        <p class="card-statement" id="card-statement">Loading...</p>
+        <div class="card-buttons">
+          <button class="btn-myth" onclick="answer(false)">
+            <span class="btn-icon">✗</span>
+            MYTH
+          </button>
+          <button class="btn-fact" onclick="answer(true)">
+            <span class="btn-icon">✓</span>
+            FACT
+          </button>
+        </div>
+        <p class="card-source" id="card-source"></p>
+      </div>
+    </div>
+    <div class="explanation-panel" id="explanation-panel">
+      <div class="explanation-inner" id="explanation-inner">
+        <div class="explanation-verdict" id="explanation-verdict"></div>
+        <p class="explanation-text" id="explanation-text"></p>
+        <p class="explanation-source" id="explanation-source"></p>
+        <button class="btn-next" id="btn-next" onclick="nextCard()">Next Card →</button>
+      </div>
+    </div>
+  </div>
+  <div id="screen-results" class="screen">
+    <div class="results-content">
+      <div class="results-emoji" id="results-emoji">🎉</div>
+      <h2 id="results-heading">Great job!</h2>
+      <p id="results-subtext">You really know your stuff!</p>
+      <div class="results-score-ring">
+        <svg viewBox="0 0 120 120" class="ring-svg">
+          <circle class="ring-bg" cx="60" cy="60" r="52"/>
+          <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="52"
+stroke-dasharray="326.7"
+stroke-dashoffset="326.7"/>
+        </svg>
+        <div class="ring-label">
+          <span class="ring-number" id="ring-number">0</span>
+          <span class="ring-total" id="ring-total">/ 20</span>
+        </div>
+      </div>
+      <div class="results-breakdown" id="results-breakdown"></div>
+      <div class="results-buttons">
+        <button class="btn-link-primary" onclick="window.open('https://forms.gle/Q5xNL3Zb9zvrrBQd8', '_blank')">Reflection Survey</button>
+        <button class="btn-secondary" onclick="restartGame()">Play Again</button>
+        <button class="btn-primary" onclick="reviewCards()">Review Cards</button>
+
+      </div>
+      <div class="results-divider"></div>
+      <div class="results-links">
+        <!-- <button class="btn-link-primary" onclick="window.open('https://forms.gle/Q5xNL3Zb9zvrrBQd8', '_blank')">Reflection Survey</button> -->
+        <button class="btn-link-tricycle" onclick="window.open('https://docs.google.com/spreadsheets/d/1aQ9W43_UssJFpcTlHvcqSaLKzCarJ2CaxCu9VxtFd40/edit?usp=sharing', '_blank')">FOR MR C ONLY!</button>
+        <button class="btn-link-secondary" onclick="window.open('https://docs.google.com/document/d/1T-aMvRZkgrjum_fHKxuaab944Q8RFyjcGF1WHf8i_zw/edit?usp=sharing', '_blank')">Works Cited</button>
+      </div>
+    </div>
+  </div>
+  <div id="screen-review" class="screen">
+    <div class="review-header">
+      <button class="btn-back" onclick="showScreen('screen-results')">← Back</button>
+      <h2>Review All Cards</h2>
+    </div>
+    <div class="review-list" id="review-list"></div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
