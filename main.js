@@ -140,7 +140,6 @@ const CARDS = [
     source: "Source: Love is Respect – Healthy Relationships"
   }
 ];
-
 let shuffledCards = [];
 let currentIndex = 0;
 let score = 0;
