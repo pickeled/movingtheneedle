@@ -373,6 +373,69 @@ function reviewCards() {
 
   showScreen('screen-review');
 }
+
+function updateThemeButtons() {
+  const dark = document.body.classList.contains('dark-mode');
+
+  const icon = dark ? '🌙' : '☀️';
+
+  const btn1 = document.getElementById('theme-toggle');
+  const btn2 = document.getElementById('theme-toggle-review');
+
+  if (btn1) btn1.textContent = icon;
+  if (btn2) btn2.textContent = icon;
+}
+
+function toggleTheme() {
+
+  document.body.classList.toggle("dark-mode");
+
+  const btn = document.getElementById("theme-toggle");
+
+  btn.classList.remove("rotate");
+  void btn.offsetWidth;
+  btn.classList.add("rotate");
+
+  const dark =
+    document.body.classList.contains("dark-mode");
+
+  if (dark) {
+
+    btn.innerHTML =
+      '<i class="fa-solid fa-moon"></i>';
+
+  } else {
+
+    btn.innerHTML =
+      '<i class="fa-solid fa-sun"></i>';
+
+  }
+
+  localStorage.setItem(
+    "healthbusters-theme",
+    dark ? "dark" : "light"
+  );
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  const savedTheme =
+    localStorage.getItem('healthbusters-theme');
+
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+
+  const btn =
+    document.getElementById('theme-toggle');
+
+  if (btn) {
+
+    btn.innerHTML =
+      document.body.classList.contains('dark-mode')
+      ? '<i class="fa-regular fa-moon"></i>'
+      : '<i class="fa-regular fa-sun"></i>';
+  }
+
   showScreen('screen-start');
 });

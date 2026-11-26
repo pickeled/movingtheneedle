@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Health Buster // Healthy and Responsible Relationships</title>
+  <title>Health Busters // Healthy and Responsible Relationships</title>
   <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <div id="screen-start" class="screen active">
@@ -12,26 +14,32 @@
     <div class="start-content">
       <div class="logo-badge">Healthy and Responsible Relationships</div>
       <h1>Health<br><span class="accent">Busters</span></h1>
-      <p class="subtitle">Apply your knowledge about healthy relationships,<br>consent, and sexual health, in a fun little game</p>
+      <p class="subtitle">Apply your knowledge about healthy relationships,<br>consent, and sexual health, in a fun way!</p>
       <div class="stats-row">
         <div class="stat-pill">20 Questions</div>
-        <div class="stat-pill">True or False</div>
+        <div class="stat-pill">True or Myth</div>
       </div>
       <button class="btn-primary" onclick="startGame()">Start Playing</button>
-      <p class="disclaimer">Moving the Needle Project - by: Andy Mikhael</p>
+      <p class="disclaimer">Developed by: Andy Mikhael</p>
     </div>
   </div>
   <div id="screen-game" class="screen">
-    <div class="game-header">
-      <div class="progress-wrap">
-        <div class="progress-bar" id="progress-bar"></div>
-      </div>
-      <div class="game-meta">
-        <span id="card-counter">Card 1 of 20</span>
-        <span id="score-display">Score: 0</span>
-      </div>
+  <div class="game-header">
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progress-bar"></div>
     </div>
-    <div class="card-stage" id="card-stage">
+    <div class="game-meta">
+      <span id="card-counter">Card 1 of 20</span>
+      <span id="score-display">Score: 0</span>
+    <button
+      id="theme-toggle"
+      class="theme-toggle"
+      onclick="toggleTheme()">
+       <i class="fa-regular fa-sun"></i>
+    </button>
+    </div>
+  </div>
+  <div class="card-stage" id="card-stage">
       <div class="card" id="game-card">
         <div class="card-tag" id="card-tag">Consent</div>
         <div class="card-number" id="card-number">01</div>
@@ -84,8 +92,6 @@ stroke-dashoffset="326.7"/>
       </div>
       <div class="results-divider"></div>
       <div class="results-links">
-        <!-- <button class="btn-link-primary" onclick="window.open('https://forms.gle/Q5xNL3Zb9zvrrBQd8', '_blank')">Reflection Survey</button> -->
-        <button class="btn-link-tricycle" onclick="window.open('https://docs.google.com/spreadsheets/d/1aQ9W43_UssJFpcTlHvcqSaLKzCarJ2CaxCu9VxtFd40/edit?usp=sharing', '_blank')">FOR MR C ONLY!</button>
         <button class="btn-link-secondary" onclick="window.open('https://docs.google.com/document/d/1T-aMvRZkgrjum_fHKxuaab944Q8RFyjcGF1WHf8i_zw/edit?usp=sharing', '_blank')">Works Cited</button>
       </div>
     </div>
